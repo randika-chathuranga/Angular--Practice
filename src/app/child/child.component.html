@@ -1,0 +1,23 @@
+<h2>Child Component</h2>
+<!--getting data from ts file using interpollation-->
+<h3>Name is <b>{{nameData}}</b></h3>
+<h4>Object Name {{objData.name}} address {{objData.address}}</h4>
+
+<!--to understand viewChild-->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+
+    <tr *ngFor="let item of listArray">
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+    </tr>
+</table>
+
+
+
+<!--child to parent data transfer-->
+<input type="text" class="form-control" #name>
+<button class="btn btn-primary mt-2" (click)="dataUpdateEvent.emit(name.value)">Click</button>
